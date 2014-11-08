@@ -7,5 +7,11 @@ public class DBAccess {
 	
 	String dbPath = "";
 	
+	public int OpenDatabase() {
+		return 0;
+	}
 	
+	public int CloseDatabase() {
+		return 0;
+	}
 }
