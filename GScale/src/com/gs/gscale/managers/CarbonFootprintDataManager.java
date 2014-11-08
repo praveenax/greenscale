@@ -55,24 +55,9 @@ public class CarbonFootprintDataManager {
 	{
 		
 		save(context);
+		mCarbonFootprintQuickDataManager.update(data);
 		return true;
 	}
-	
-	public boolean addData(Context context, Date StartDate, CarbonFootprintData data)
-	{
-		
-		save(context);
-		return true;
-	}
-	
-	public boolean addData(Context context, Date StartDate, Date endDate, CarbonFootprintData data)
-	{
-		
-		save(context);
-		return true;
-	}
-	
-	
 
 	public List<CarbonFootprintData> getAllFootPrintData() {
 		return mData;
@@ -80,11 +65,27 @@ public class CarbonFootprintDataManager {
 
 	public List<CarbonFootprintData> getTodayFootPrintData() {
 		// ToDO
-		return null;
+		List<CarbonFootprintData> selData = new List<CarbonFootprintData>();
+		Date todayDate = Calendar.getInstance().getTime();
+		for(var i = 0; i < mData.length; i++) {
+			if(todayDate == mData[i].startTimeStamp) {
+				selData.push(mData[i]);
+			}
+		}
+		return selData;
 	}
 
 	public List<CarbonFootprintDataAggregated> getWeeklyFootPrintData() {
 		// ToDO
-		return null;
+		List<CarbonFootprintData> selData = new List<CarbonFootprintData>();
+		Date todayDate = Calendar.getInstance().getTime();
+		for(var i = 0; i < mData.length; i++) {
+			if (!((todayDate.getDay() - mData[i].startTimeStamp.getDay() <= 7)
+					&& (todayDate.getMonth() == mData[i].startTimeStamp.getMonth()) && (todayDate
+						.getYear() == mData[i].startTimeStamp.getYear()))) {
+				selData.push(mData[i]);
+			}
+		}
+		return selData;
 	}
 }
