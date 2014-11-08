@@ -91,22 +91,22 @@ public class CarbonFootprintDataManager {
 		List<CarbonFootprintDataAggregated> aggr = new ArrayList<CarbonFootprintDataAggregated>();
 		for(int i = 0; i <4; i++) {
 			CarbonFootprintDataAggregated data = new CarbonFootprintDataAggregated();
-			data.title = "Week " + (i + 1).toString();
+			data.title = "Week " + (i + 1);
 			data.carbonData = 0;
 			aggr.add(data);
 		}
 		
 		Date today = Calendar.getInstance().getTime();
 		for(CarbonFootprintData data : mData) {
-			int days = this.getDaysDifference(today, mData.startTimestamp);
+			int days = this.getDaysDifference(today, data.startTimeStamp);
 			if(days >= 0 && days <= 7) {
-				aggr[0].carbonData += data.carbonData;
+				aggr.get(0).carbonData += data.carbonData;
 			} else if(days > 7 && days <= 14) {
-				aggr[1].carbonData += data.carbonData;
+				aggr.get(0).carbonData += data.carbonData;
 			} else if(days >14 && days <= 21) {
-				aggr[2].carbonData += data.carbonData;
+				aggr.get(0).carbonData += data.carbonData;
 			} else if(days > 21 && days <= 28) {
-				aggr[3].carbonData += data.carbonData;
+				aggr.get(0).carbonData += data.carbonData;
 			}
 		}
 
