@@ -56,6 +56,15 @@ public class CarbonFootprintQuickDataManager {
 	public boolean update(Context context, CarbonFootprintData updateData)
 	{
 		//TODO
+		if(this.lastActivityDate.equals(updateData.startTimeStamp)) {
+			this.totalFootprint = this.totalFootprint + updateData.carbonData;
+			this.lastActivity = updateData;
+		} else {
+			this.lastActivityDate = updateData.startTimeStamp;
+			this.totalFootprint = updateData.carbonData;
+			this.lastActivity = updateData;
+		}
+		
 		saveQuickLoadData(context);
 		return true;
 	}
