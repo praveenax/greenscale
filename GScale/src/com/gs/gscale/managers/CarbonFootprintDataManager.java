@@ -13,6 +13,12 @@ import com.gs.gscale.model.CarbonFootprintDataAggregated;
 public class CarbonFootprintDataManager {
 
 	private List<CarbonFootprintData> mData;
+	private CarbonFootprintQuickDataManager mCarbonFootprintQuickDataManager = null;
+	
+	public void setCarbonFootprintQuickDataManager(
+			CarbonFootprintQuickDataManager mCarbonFootprintQuickDataManager) {
+		this.mCarbonFootprintQuickDataManager = mCarbonFootprintQuickDataManager;
+	}
 	
 	public static CarbonFootprintDataManager getInstance(Context context)
 	{
@@ -25,6 +31,8 @@ public class CarbonFootprintDataManager {
 			return CarbonFootprintDataManager.fromJson(dataJson);
 		
 	}
+
+
 
 	public String toJson() {
 		Gson gson = new Gson();

@@ -17,6 +17,7 @@ public class MyApplication extends Application {
 		mCarbonMetaEntryManager = new CarbonMetaEntryManager();
 		mCarbonFootprintDataManager = CarbonFootprintDataManager.getInstance(this);
 		mCarbonFootprintQuickDataManager = CarbonFootprintQuickDataManager.getInstance(this);
+		mCarbonFootprintDataManager.setCarbonFootprintQuickDataManager(mCarbonFootprintQuickDataManager);
 	}
 
 	public CarbonFootprintDataManager getCarbonFootprintDataManager() {

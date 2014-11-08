@@ -52,4 +52,11 @@ public class CarbonFootprintQuickDataManager {
 		Gson gson = new Gson();
 		return gson.toJson(this);
 	}
+	
+	public boolean update(Context context, CarbonFootprintData updateData)
+	{
+		//TODO
+		saveQuickLoadData(context);
+		return true;
+	}
 }
