@@ -1,5 +1,7 @@
 package com.gs.gscale.managers;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -55,7 +57,7 @@ public class CarbonFootprintDataManager {
 	{
 		
 		save(context);
-		mCarbonFootprintQuickDataManager.update(data);
+		mCarbonFootprintQuickDataManager.update(context, data);
 		return true;
 	}
 
@@ -64,28 +66,16 @@ public class CarbonFootprintDataManager {
 	}
 
 	public List<CarbonFootprintData> getTodayFootPrintData() {
-		// ToDO
-		List<CarbonFootprintData> selData = new List<CarbonFootprintData>();
-		Date todayDate = Calendar.getInstance().getTime();
-		for(var i = 0; i < mData.length; i++) {
-			if(todayDate == mData[i].startTimeStamp) {
-				selData.push(mData[i]);
-			}
-		}
+		List<CarbonFootprintData> selData = new ArrayList<CarbonFootprintData>();
+		
 		return selData;
 	}
 
 	public List<CarbonFootprintDataAggregated> getWeeklyFootPrintData() {
 		// ToDO
-		List<CarbonFootprintData> selData = new List<CarbonFootprintData>();
-		Date todayDate = Calendar.getInstance().getTime();
-		for(var i = 0; i < mData.length; i++) {
-			if (!((todayDate.getDay() - mData[i].startTimeStamp.getDay() <= 7)
-					&& (todayDate.getMonth() == mData[i].startTimeStamp.getMonth()) && (todayDate
-						.getYear() == mData[i].startTimeStamp.getYear()))) {
-				selData.push(mData[i]);
-			}
-		}
+		List<CarbonFootprintDataAggregated> selData = new ArrayList<CarbonFootprintDataAggregated>();
+
+
 		return selData;
 	}
 }
