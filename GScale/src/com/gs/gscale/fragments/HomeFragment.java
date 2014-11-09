@@ -2,6 +2,7 @@ package com.gs.gscale.fragments;
 
 import com.gs.gscale.MyApplication;
 import com.gs.gscale.managers.CarbonFootprintQuickDataManager;
+import com.gs.gscale.model.CarbonFootprintData;
 
 import info.androidhive.slidingmenu.R;
 import android.app.Fragment;
@@ -18,6 +19,7 @@ public class HomeFragment extends Fragment {
 
 	private TextView mtxt_today;
 	private TextView mtxt_yesterday;
+	private TextView txt_trees;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,6 +31,7 @@ public class HomeFragment extends Fragment {
 		mtxt_today = (TextView) rootView.findViewById(R.id.txt_today_carbon);
 		mtxt_yesterday = (TextView) rootView
 				.findViewById(R.id.txt_yesterday_carbon);
+		txt_trees = (TextView) rootView.findViewById(R.id.txt_trees);
 
 		return rootView;
 	}
@@ -36,10 +39,15 @@ public class HomeFragment extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		
-		CarbonFootprintQuickDataManager tmpQuickData = ((MyApplication) getActivity().getApplication()).getCarbonFootprintQuickDataManager();
-		mtxt_today.setText(new Double(tmpQuickData.totalFootprint).toString());
-		mtxt_yesterday.setText(new Double(tmpQuickData.yesterdayFootprint).toString());
-	}
 
+		CarbonFootprintQuickDataManager tmpQuickData = ((MyApplication) getActivity()
+				.getApplication()).getCarbonFootprintQuickDataManager();
+		mtxt_today.setText(""
+				+ CarbonFootprintData.getDoubleRounded(new Double(
+						tmpQuickData.totalFootprint).doubleValue()));
+		mtxt_yesterday.setText(""
+				+ CarbonFootprintData.getDoubleRounded(new Double(
+						tmpQuickData.yesterdayFootprint).doubleValue()));
+		txt_trees.setText("Tress to plant : " + tmpQuickData.getTressCount());
+	}
 }

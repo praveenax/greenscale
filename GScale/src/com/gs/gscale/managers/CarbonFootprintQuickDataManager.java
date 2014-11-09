@@ -13,6 +13,7 @@ public class CarbonFootprintQuickDataManager {
 
 	public Date lastActivityDate = null;
 	public double totalFootprint = 0;
+	public double fulltotalFootprint = 0;
 	public CarbonFootprintData lastActivity = null;
 	public double yesterdayFootprint = 0;
 
@@ -66,9 +67,18 @@ public class CarbonFootprintQuickDataManager {
 			this.totalFootprint = updateData.carbonData;
 		}
 
+		fulltotalFootprint += updateData.carbonData;
+
 		this.lastActivity = updateData;
 
 		saveQuickLoadData(context);
 		return true;
+	}
+
+	public int getTressCount() {
+		if (0 == fulltotalFootprint)
+			return 0;
+		else
+			return  1 + (int) (fulltotalFootprint / 50);
 	}
 }
