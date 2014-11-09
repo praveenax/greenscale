@@ -1,4 +1,4 @@
-package com.gs.gscale;
+package com.gs.gscale.fragments;
 
 import info.androidhive.slidingmenu.R;
 import android.app.Fragment;
@@ -15,7 +15,7 @@ public class CalculatorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
  
-        View rootView = inflater.inflate(R.layout.fragment_find_people, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_calc, container, false);
          
         return rootView;
     }

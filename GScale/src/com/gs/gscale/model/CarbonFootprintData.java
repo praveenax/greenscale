@@ -25,4 +25,10 @@ public class CarbonFootprintData {
 
 		return tmpCarbonFootprintData;
 	}
+
+	public static Boolean isSameDay(Date d1, Date d2) {
+		return ((d1.getDay() == d2.getDay())
+				&& (d1.getMonth() == d2.getMonth()) && (d1.getYear() == d2
+				.getYear()));
+	}
 }

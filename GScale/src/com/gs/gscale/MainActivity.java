@@ -5,6 +5,11 @@ import info.androidhive.slidingmenu.R;
 import java.util.ArrayList;
 
 import com.gs.gscale.adapter.NavDrawerListAdapter;
+import com.gs.gscale.fragments.ActivityFragment;
+import com.gs.gscale.fragments.CalculatorFragment;
+import com.gs.gscale.fragments.HomeFragment;
+import com.gs.gscale.fragments.LogsFragment;
+import com.gs.gscale.fragments.TravellerFragment;
 import com.gs.gscale.model.NavDrawerItem;
 
 import android.app.Activity;
@@ -172,18 +177,14 @@ public class MainActivity extends Activity {
 			fragment = new CalculatorFragment();
 			break;
 		case 2:
-			fragment = new PhotosFragment();
+			fragment = new TravellerFragment();
 			break;
 		case 3:
-			fragment = new CommunityFragment();
+			fragment = new ActivityFragment();
 			break;
 		case 4:
-			fragment = new PagesFragment();
+			fragment = new LogsFragment();
 			break;
-		case 5:
-			fragment = new WhatsHotFragment();
-			break;
-
 		default:
 			break;
 		}

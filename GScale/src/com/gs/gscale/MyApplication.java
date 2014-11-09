@@ -12,6 +12,15 @@ public class MyApplication extends Application {
 	private CarbonMetaEntryManager mCarbonMetaEntryManager;
 	private CarbonFootprintQuickDataManager mCarbonFootprintQuickDataManager;
 	
+	public CarbonFootprintQuickDataManager getmCarbonFootprintQuickDataManager() {
+		return mCarbonFootprintQuickDataManager;
+	}
+
+	public void setmCarbonFootprintQuickDataManager(
+			CarbonFootprintQuickDataManager mCarbonFootprintQuickDataManager) {
+		this.mCarbonFootprintQuickDataManager = mCarbonFootprintQuickDataManager;
+	}
+
 	@Override
 	public void onCreate() {
 		mCarbonMetaEntryManager = new CarbonMetaEntryManager();
@@ -20,11 +29,8 @@ public class MyApplication extends Application {
 		mCarbonFootprintDataManager.setCarbonFootprintQuickDataManager(mCarbonFootprintQuickDataManager);
 	}
 
-	public CarbonFootprintDataManager getCarbonFootprintDataManager() {
-		return mCarbonFootprintDataManager;
+	public CarbonFootprintQuickDataManager getCarbonFootprintQuickDataManager() {
+		return mCarbonFootprintQuickDataManager;
 	}
 
-	public CarbonMetaEntryManager getCarbonMetaEntryManager() {
-		return mCarbonMetaEntryManager;
-	}
 }

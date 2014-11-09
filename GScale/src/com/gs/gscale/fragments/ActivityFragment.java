@@ -1,4 +1,4 @@
-package com.gs.gscale;
+package com.gs.gscale.fragments;
 
 import info.androidhive.slidingmenu.R;
 import android.app.Fragment;
@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class CommunityFragment extends Fragment {
+public class ActivityFragment extends Fragment {
 	
-	public CommunityFragment(){}
+	public ActivityFragment(){}
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
