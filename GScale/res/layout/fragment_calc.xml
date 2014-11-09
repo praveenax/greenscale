@@ -9,6 +9,7 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp" >
 
@@ -103,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ed_input_units"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
+                android:paddingTop="8dp"
                 android:text="Carbon : 55 grams"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 

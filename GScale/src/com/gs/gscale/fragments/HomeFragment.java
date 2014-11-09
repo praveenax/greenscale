@@ -37,9 +37,9 @@ public class HomeFragment extends Fragment {
 	public void onResume() {
 		super.onResume();
 		
-		CarbonFootprintQuickDataManager tmpQuickData = ((MyApplication) getActivity().getApplication()).getCarbonFootprintQuickDataManager();
-		mtxt_today.setText(new Double(tmpQuickData.totalFootprint).toString());
-		mtxt_yesterday.setText(new Double(tmpQuickData.yesterdayFootprint).toString());
+//		CarbonFootprintQuickDataManager tmpQuickData = ((MyApplication) getActivity().getApplication()).getCarbonFootprintQuickDataManager();
+//		mtxt_today.setText(new Double(tmpQuickData.totalFootprint).toString());
+//		mtxt_yesterday.setText(new Double(tmpQuickData.yesterdayFootprint).toString());
 	}
 
 }

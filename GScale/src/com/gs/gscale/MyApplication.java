@@ -12,14 +12,7 @@ public class MyApplication extends Application {
 	private CarbonMetaEntryManager mCarbonMetaEntryManager;
 	private CarbonFootprintQuickDataManager mCarbonFootprintQuickDataManager;
 	
-	public CarbonFootprintQuickDataManager getmCarbonFootprintQuickDataManager() {
-		return mCarbonFootprintQuickDataManager;
-	}
 
-	public void setmCarbonFootprintQuickDataManager(
-			CarbonFootprintQuickDataManager mCarbonFootprintQuickDataManager) {
-		this.mCarbonFootprintQuickDataManager = mCarbonFootprintQuickDataManager;
-	}
 
 	@Override
 	public void onCreate() {
@@ -31,6 +24,10 @@ public class MyApplication extends Application {
 
 	public CarbonFootprintQuickDataManager getCarbonFootprintQuickDataManager() {
 		return mCarbonFootprintQuickDataManager;
+	}
+	
+	public CarbonFootprintDataManager getCarbonFootprintDataManager() {
+		return mCarbonFootprintDataManager;
 	}
 
 }

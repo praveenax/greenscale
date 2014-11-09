@@ -11,6 +11,7 @@ import android.preference.PreferenceManager;
 import com.google.gson.Gson;
 import com.gs.gscale.model.CarbonFootprintData;
 import com.gs.gscale.model.CarbonFootprintDataAggregated;
+import com.gs.gscale.model.CarbonMetaEntry;
 
 public class CarbonFootprintDataManager {
 
@@ -33,8 +34,6 @@ public class CarbonFootprintDataManager {
 			return CarbonFootprintDataManager.fromJson(dataJson);
 		
 	}
-
-
 
 	public String toJson() {
 		Gson gson = new Gson();
@@ -113,9 +112,16 @@ public class CarbonFootprintDataManager {
 
 		return aggr;
 	}
-	
+
 	private int getDaysDifference(Date date1, Date date2) {
 		long diffms = Math.abs(date1.getTime() - date2.getTime());
 		return (int)(diffms / (1000 * 60 * 60 * 24));
+	}
+	
+	public void add(Context context, CarbonFootprintData entry)
+	{
+		mData.add(entry);
+		save(context);
+		mCarbonFootprintQuickDataManager.update(context, entry);
 	}
 }
