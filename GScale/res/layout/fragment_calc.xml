@@ -82,7 +82,8 @@
                 android:layout_below="@+id/txt_measure"
                 android:layout_toLeftOf="@+id/txt_unit"
                 android:ems="10"
-                android:inputType="numberDecimal" >
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true" >
 
                 <requestFocus />
             </EditText>
@@ -113,12 +114,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/txt_carbon"
-                android:paddingTop="8dp"
+                android:layout_centerHorizontal="true"
                 android:paddingBottom="8dp"
+                android:paddingTop="8dp"
                 android:text="Add to my Contribution" />
-
         </RelativeLayout>
     </ScrollView>
 

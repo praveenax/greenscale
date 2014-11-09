@@ -1,4 +1,4 @@
-package com.gs.gscale.helpers;
+package com.gs.gscale.managers;
 
 import java.util.Calendar;
 import java.util.Date;
