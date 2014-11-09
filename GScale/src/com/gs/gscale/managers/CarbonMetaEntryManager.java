@@ -26,7 +26,7 @@ public class CarbonMetaEntryManager {
 		myCarbonMetaEntryList.add(new CarbonMetaEntry("Electricity", "Null",
 				"Null", "Unit", "KWh", 5.2, 6, 2));
 		myCarbonMetaEntryList.add(new CarbonMetaEntry("LPG", "Null", "Null",
-				"Weight", "KM", 18, 7, 2));
+				"Weight", "Kg", 18, 7, 2));
 
 		return myCarbonMetaEntryList;
 	}
@@ -107,5 +107,19 @@ public class CarbonMetaEntryManager {
 			if (id == carbonMeta.id)
 				return carbonMeta.iconResID;
 		return 0;
+	}
+
+	public String getMeasurement(int id) {
+		for (CarbonMetaEntry carbonMeta : myCarbonMetaEntryList)
+			if (id == carbonMeta.id)
+				return carbonMeta.measurement;
+		return "Measurement";
+	}
+
+	public String getUnit(int id) {
+		for (CarbonMetaEntry carbonMeta : myCarbonMetaEntryList)
+			if (id == carbonMeta.id)
+				return carbonMeta.unit;
+		return "Unit";
 	}
 }

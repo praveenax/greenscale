@@ -185,6 +185,10 @@ public class CalculatorFragment extends Fragment implements OnClickListener,
 			break;
 		}
 
+		txt_measure.setText(((MyApplication) getActivity().getApplication())
+				.getCarbonMetaEntryManager().getMeasurement(getID()));
+		txt_unit.setText(((MyApplication) getActivity().getApplication())
+				.getCarbonMetaEntryManager().getUnit(getID()));
 		ed_user_input.setText("0");
 	}
 
