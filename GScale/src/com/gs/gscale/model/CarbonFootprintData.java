@@ -1,5 +1,6 @@
 package com.gs.gscale.model;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 public class CarbonFootprintData {
@@ -17,7 +18,7 @@ public class CarbonFootprintData {
 		CarbonFootprintData tmpCarbonFootprintData = new CarbonFootprintData();
 
 		tmpCarbonFootprintData.id = id;
-		tmpCarbonFootprintData.units = units;
+		tmpCarbonFootprintData.units = CarbonFootprintData.getDoubleRounded(units);
 		tmpCarbonFootprintData.carbonData = carbonData;
 		tmpCarbonFootprintData.startTimeStamp = startTimeStamp;
 		tmpCarbonFootprintData.endTimeStamp = endTimeStamp;
@@ -30,5 +31,10 @@ public class CarbonFootprintData {
 		return ((d1.getDay() == d2.getDay())
 				&& (d1.getMonth() == d2.getMonth()) && (d1.getYear() == d2
 				.getYear()));
+	}
+
+	public static double getDoubleRounded(double d) {
+		DecimalFormat df = new DecimalFormat("###.##");
+		return Double.parseDouble(df.format(d));
 	}
 }

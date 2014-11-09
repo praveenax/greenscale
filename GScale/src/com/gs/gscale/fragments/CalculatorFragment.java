@@ -221,7 +221,7 @@ public class CalculatorFragment extends Fragment implements OnClickListener,
 		double mf = ((MyApplication) (getActivity().getApplication()))
 				.getCarbonMetaEntryManager().getMulFac(getID());
 
-		carbon_value = ci * mf;
+		carbon_value = CarbonFootprintData.getDoubleRounded(ci * mf);
 
 		txt_carbon.setText("Carbon : " + carbon_value + " grams");
 	}
