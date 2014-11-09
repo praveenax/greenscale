@@ -106,7 +106,7 @@
                 android:layout_below="@+id/ed_input_units"
                 android:layout_centerHorizontal="true"
                 android:paddingTop="8dp"
-                android:text="Carbon : 55 grams"
+                android:text="Carbon : 0 grams"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Button

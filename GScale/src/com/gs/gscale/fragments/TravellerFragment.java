@@ -16,8 +16,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,12 +24,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gs.gscale.MainActivity;
 import com.gs.gscale.MyApplication;
 import com.gs.gscale.helpers.CarbonFootprintDataBuilder;
 import com.gs.gscale.model.CarbonFootprintData;
@@ -91,6 +87,9 @@ public class TravellerFragment extends Fragment implements OnClickListener,
 		spim_mode.setOnItemSelectedListener(this);
 		spim_by.setOnItemSelectedListener(this);
 
+		btn_stop.setEnabled(false);
+		btn_start.setEnabled(true);
+
 		return rootView;
 	}
 
@@ -108,7 +107,8 @@ public class TravellerFragment extends Fragment implements OnClickListener,
 						+ source.getLongitude() + "]");
 			} catch (NullPointerException E) {
 			}
-
+			btn_stop.setEnabled(true);
+			btn_start.setEnabled(false);
 			break;
 		case R.id.btn_stop:
 
@@ -124,17 +124,34 @@ public class TravellerFragment extends Fragment implements OnClickListener,
 			distance = distance / 1000;
 
 			txt_distance.setText("" + distance);
-			carbon_value = distance * mf;
+			carbon_value = CarbonFootprintData.getDoubleRounded(distance * mf);
+			txt_carbon.setText("Carbon : " + carbon_value + " grams");
 
-			CarbonFootprintDataBuilder builder = new CarbonFootprintDataBuilder();
-			CarbonFootprintData carbonData = builder
-					.setCarbonData(carbon_value).setId(0).setModeID(getId())
-					.setStartTimeStamp(startDate)
-					.setEndTimeStamp(Calendar.getInstance().getTime()).create();
+			if (carbon_value != 0) {
 
-			((MyApplication) (getActivity().getApplication()))
-					.getCarbonFootprintDataManager().add(getActivity(),
-							carbonData);
+				CarbonFootprintDataBuilder builder = new CarbonFootprintDataBuilder();
+				CarbonFootprintData carbonData = builder
+						.setCarbonData(carbon_value).setId(0)
+						.setModeID(getId()).setStartTimeStamp(startDate)
+						.setEndTimeStamp(Calendar.getInstance().getTime())
+						.create();
+
+				((MyApplication) (getActivity().getApplication()))
+						.getCarbonFootprintDataManager().add(getActivity(),
+								carbonData);
+				Toast.makeText(
+						v.getContext(),
+						"Your Carbon foot Print is recorded. Appreciate you being responsible.\r\nPlant and grow trees!!",
+						Toast.LENGTH_LONG).show();
+			} else
+				Toast.makeText(v.getContext(),
+						"You are already at 0.\n\nWell Done. No footprint!!",
+						Toast.LENGTH_LONG).show();
+
+			btn_stop.setEnabled(false);
+			btn_start.setEnabled(true);
+
+			break;
 
 		default:
 			break;

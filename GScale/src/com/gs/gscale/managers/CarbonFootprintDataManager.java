@@ -11,7 +11,6 @@ import android.preference.PreferenceManager;
 import com.google.gson.Gson;
 import com.gs.gscale.model.CarbonFootprintData;
 import com.gs.gscale.model.CarbonFootprintDataAggregated;
-import com.gs.gscale.model.CarbonMetaEntry;
 
 public class CarbonFootprintDataManager {
 
@@ -55,14 +54,6 @@ public class CarbonFootprintDataManager {
 	{
 		PreferenceManager.getDefaultSharedPreferences(context).edit()
 		.putString("MyData", this.toJson()).commit();
-	}
-	
-	private boolean addData(Context context, CarbonFootprintData data)
-	{
-		
-		save(context);
-		mCarbonFootprintQuickDataManager.update(context, data);
-		return true;
 	}
 
 	public List<CarbonFootprintData> getAllFootPrintData() {

@@ -65,7 +65,7 @@
                 android:layout_below="@+id/txt_measure"
                 android:layout_toLeftOf="@+id/txt_unit"
                 android:ems="10"
-                android:text="Running" />
+                android:text="0.0" />
 
             <TextView
                 android:id="@+id/txt_unit"
@@ -85,7 +85,7 @@
                 android:layout_below="@+id/btn_stop"
                 android:layout_centerHorizontal="true"
                 android:paddingTop="8dp"
-                android:text="Carbon : 55 grams"
+                android:text="Carbon : 0 grams"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Button

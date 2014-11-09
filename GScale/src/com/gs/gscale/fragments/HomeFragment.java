@@ -48,6 +48,6 @@ public class HomeFragment extends Fragment {
 		mtxt_yesterday.setText(""
 				+ CarbonFootprintData.getDoubleRounded(new Double(
 						tmpQuickData.yesterdayFootprint).doubleValue()));
-		txt_trees.setText("Tress to plant : " + tmpQuickData.getTressCount());
+		txt_trees.setText("Trees to plant : " + tmpQuickData.getTressCount());
 	}
 }
