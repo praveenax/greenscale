@@ -52,10 +52,10 @@ public final class R {
         public static final int list_selector=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a001a;
+        public static final int action_settings=0x7f0a001b;
         public static final int btn_add=0x7f0a0010;
-        public static final int btn_start=0x7f0a0019;
-        public static final int btn_stop=0x7f0a0018;
+        public static final int btn_start=0x7f0a001a;
+        public static final int btn_stop=0x7f0a0019;
         public static final int counter=0x7f0a0005;
         public static final int drawer_layout=0x7f0a0000;
         public static final int ed_input_units=0x7f0a000d;
@@ -65,6 +65,7 @@ public final class R {
         public static final int spin_by=0x7f0a000b;
         public static final int spin_catagory=0x7f0a0007;
         public static final int spin_mode=0x7f0a0009;
+        public static final int textView1=0x7f0a0017;
         public static final int textView3=0x7f0a0012;
         public static final int textView4=0x7f0a0015;
         public static final int title=0x7f0a0004;
@@ -72,7 +73,7 @@ public final class R {
         public static final int txt_by=0x7f0a000a;
         public static final int txt_carbon=0x7f0a000f;
         public static final int txt_cat=0x7f0a0006;
-        public static final int txt_distance=0x7f0a0017;
+        public static final int txt_distance=0x7f0a0018;
         public static final int txt_measure=0x7f0a000c;
         public static final int txt_mode=0x7f0a0008;
         public static final int txt_today_carbon=0x7f0a0013;
