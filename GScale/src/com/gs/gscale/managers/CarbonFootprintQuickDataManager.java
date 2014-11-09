@@ -56,8 +56,9 @@ public class CarbonFootprintQuickDataManager {
 
 	public boolean update(Context context, CarbonFootprintData updateData) {
 
-		if (!CarbonFootprintData.isSameDay(lastActivityDate,
-				updateData.startTimeStamp))
+		if ((null != lastActivityDate)
+				&& (!CarbonFootprintData.isSameDay(lastActivityDate,
+						updateData.startTimeStamp)))
 			this.totalFootprint += updateData.carbonData;
 		else {
 			this.lastActivityDate = updateData.startTimeStamp;

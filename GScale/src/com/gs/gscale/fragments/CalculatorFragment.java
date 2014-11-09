@@ -91,10 +91,10 @@ public class CalculatorFragment extends Fragment implements OnClickListener,
 			if (carbon_value != 0) {
 
 				CarbonFootprintDataBuilder builder = new CarbonFootprintDataBuilder();
-				CarbonFootprintData newData;
-				newData = builder.setId(0).setModeID(getID())
+				CarbonFootprintData newData = builder.setId(0)
+						.setModeID(getID())
 						.setStartTimeStamp(Calendar.getInstance().getTime())
-						.create();
+						.setCarbonData(carbon_value).create();
 				((MyApplication) getActivity().getApplication())
 						.getCarbonFootprintDataManager().add(getActivity(),
 								newData);

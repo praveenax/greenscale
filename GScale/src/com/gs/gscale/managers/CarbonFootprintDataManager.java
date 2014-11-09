@@ -18,6 +18,11 @@ public class CarbonFootprintDataManager {
 	private List<CarbonFootprintData> mData;
 	private CarbonFootprintQuickDataManager mCarbonFootprintQuickDataManager = null;
 	
+	public CarbonFootprintDataManager()
+	{
+		mData = new ArrayList<CarbonFootprintData>();
+	}
+	
 	public void setCarbonFootprintQuickDataManager(
 			CarbonFootprintQuickDataManager mCarbonFootprintQuickDataManager) {
 		this.mCarbonFootprintQuickDataManager = mCarbonFootprintQuickDataManager;
