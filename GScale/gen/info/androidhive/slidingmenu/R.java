@@ -52,8 +52,10 @@ public final class R {
         public static final int list_selector=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0016;
+        public static final int action_settings=0x7f0a0019;
         public static final int btn_add=0x7f0a0010;
+        public static final int btn_start=0x7f0a0018;
+        public static final int btn_stop=0x7f0a0017;
         public static final int counter=0x7f0a0005;
         public static final int drawer_layout=0x7f0a0000;
         public static final int ed_input_units=0x7f0a000d;
@@ -70,6 +72,7 @@ public final class R {
         public static final int txt_by=0x7f0a000a;
         public static final int txt_carbon=0x7f0a000f;
         public static final int txt_cat=0x7f0a0006;
+        public static final int txt_distance=0x7f0a0016;
         public static final int txt_measure=0x7f0a000c;
         public static final int txt_mode=0x7f0a0008;
         public static final int txt_today_carbon=0x7f0a0013;
@@ -84,7 +87,8 @@ public final class R {
         public static final int fragment_home=0x7f030004;
         public static final int fragment_pages=0x7f030005;
         public static final int fragment_photos=0x7f030006;
-        public static final int fragment_whats_hot=0x7f030007;
+        public static final int fragment_traveller=0x7f030007;
+        public static final int fragment_whats_hot=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f090000;
