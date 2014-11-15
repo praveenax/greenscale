@@ -64,6 +64,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/txt_measure"
                 android:layout_toLeftOf="@+id/txt_unit"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:ems="10"
                 android:text="0.0" />
 
